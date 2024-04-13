@@ -3,7 +3,8 @@ import matplotlib.pyplot as plt
 import csv
 import provinces as const
 
-def multiplot(datasets, provinces,title = None, ylabel = None):
+def multiplot(datasets, provinces,title = None, ylabel = None,legend_on=True):
+    plt.figure(figsize=(12,8))
     for set in datasets:
         with open("Data/"+set+".csv","r") as csvfile:
             plots = csv.reader(csvfile)
@@ -27,7 +28,6 @@ def multiplot(datasets, provinces,title = None, ylabel = None):
                     s.reverse()
                 for i in range(0,len(series)):
                     plt.plot(dates,series[i],label=labels[i] + ", " + set)
-                plt.legend()
             else:
                 dates = []
                 series = []
@@ -48,13 +48,14 @@ def multiplot(datasets, provinces,title = None, ylabel = None):
                     prov.reverse()
                 for i in range(0,len(series)):
                     plt.plot(dates,series[i],label=labels[i]+ ", " + set)
-                plt.legend()
     if(title==None):
         plt.title(datasets)
     else:
         plt.title(title)
     plt.xlabel('Year', fontsize=10)
     plt.ylabel(ylabel, fontsize=10)
+    if legend_on:
+        plt.legend()
     plt.show()
 
 
