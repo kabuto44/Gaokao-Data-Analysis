@@ -1,7 +1,8 @@
 import numpy as np
 import matplotlib.pyplot as plt
 import csv
-import provinces as const
+import consts as const
+import yearbookops as ybk
 
 def multiplot(datasets, provinces,title = None, ylabel = None,legend_on=True):
     plt.figure(figsize=(12,8))
@@ -84,3 +85,29 @@ def save(data, title,firstyear=2022):
         header.append(firstyear-i)
     all_data = np.insert(data,0,header,axis=0)
     np.savetxt("Data/" + title+".csv",all_data,delimiter=",",fmt='%s')
+
+
+        
+
+
+def clean_from_yearbook(indicator):
+    metadata,data=ybk.extract_ybk(indicator)
+    metadata,data=ybk.sort_provinces(metadata,data)
+    metadata,data=ybk.fix_date_range(metadata,data)
+    metadata_lines = []
+    for key in metadata:
+        metadata_lines.append(key + ": " + str(metadata[key]))
+    np.savetxt("Cleaned Data/" + indicator + ".csv",data,delimiter=",",fmt='%s')
+    np.savetxt("Cleaned Data/" + indicator + ".txt", metadata_lines, fmt='%s')
+    # with open("Yearbook Imported Data/"+indicator + ".csv") as imported:
+    #     is_partial=False
+    #     data=[]
+    #     dates=[]
+    #     rawdata=[]
+    #     region_dict = {}
+    #     final_data=[]
+        
+    #     print(indicator_name)
+    #     print(dates)
+    #     print(data)
+    #     print(region_dict)
