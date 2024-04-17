@@ -4,7 +4,7 @@ import consts as const
 
 def extract_ybk(indicator):
     with open("Yearbook Imported Data/" + indicator + ".csv") as imported:
-        indicator_name = ""
+        indicator_name = []
         data = []
         dates = []
         raw_data = []
@@ -25,7 +25,7 @@ def extract_ybk(indicator):
             if row[0][:4]=="Data":
                 continue
             if str(row[0][:10])=="Indicators":
-                indicator_name+=row[0][12:]
+                indicator_name.append(row[0][12:])
             if str(row[0][:4])=="Year":
                 continue
             if str(row[0]) in const.PROVINCES:
