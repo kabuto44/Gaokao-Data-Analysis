@@ -101,7 +101,7 @@ def singleplot(variable, provinces = const.PROVINCES, xlabel = "Year", ylabel = 
 
 def extract(path,select=const.PROVINCES):
     metadata={}
-    with open("Data/" + path + ".txt") as txtfile:
+    with open("Indicators/" + path + ".txt") as txtfile:
         lines = txtfile.readlines()
         for line in lines:
             metadata[line[:line.index(":")]]=ast.literal_eval(line[line.index(":")+2:])
@@ -109,7 +109,7 @@ def extract(path,select=const.PROVINCES):
     all_data=[]
     new_regions = {}
     i=0
-    with open("Data/" + path+ ".csv") as csvfile:
+    with open("Indicators/" + path+ ".csv") as csvfile:
         plots = csv.reader(csvfile)
         for row in plots:
             all_data.append(row)
@@ -130,11 +130,11 @@ def extract(path,select=const.PROVINCES):
 
 def save(data,metadata, path):
     data = data.astype(str)
-    np.savetxt("Data/" + path+".csv",data,delimiter=",",fmt='%s')
+    np.savetxt("Indicators/" + path+".csv",data,delimiter=",",fmt='%s')
     metadata_lines = []
     for key in metadata:
         metadata_lines.append(key + ": " + str(metadata[key]))
-    np.savetxt("Data/" + path + ".txt", metadata_lines, fmt='%s')
+    np.savetxt("Indicators/" + path + ".txt", metadata_lines, fmt='%s')
 
 
 
@@ -148,5 +148,5 @@ def clean_from_yearbook(indicator):
     metadata_lines = []
     for key in metadata:
         metadata_lines.append(key + ": " + str(metadata[key]))
-    np.savetxt("Data/" + indicator + ".csv",data,delimiter=",",fmt='%s')
-    np.savetxt("Data/" + indicator + ".txt", metadata_lines, fmt='%s')
+    np.savetxt("Indicators/" + indicator + ".csv",data,delimiter=",",fmt='%s')
+    np.savetxt("Indicators/" + indicator + ".txt", metadata_lines, fmt='%s')

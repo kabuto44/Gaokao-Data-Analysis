@@ -1,11 +1,3 @@
-rural population: in 10,000s
-urban population: in 10,000s
-total population: in 10,000s
-secondary senior graduates: in 10,000s
-entering undergraduates: in 10,000s
-net graduate inflow: in 10,000s
-percent urban: in percent
-
 calculated datasets:
 - Net Graduate inflow
 - Percent Urban

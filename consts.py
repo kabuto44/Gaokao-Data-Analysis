@@ -12,4 +12,4 @@ NORTHWEST = ['Shaanxi', 'Gansu', 'Qinghai', 'Ningxia', 'Xinjiang']
 NORTH_CHINA_MINUS_CITIES = ['Hebei', 'Shanxi', 'Inner Mongolia']
 EAST_CHINA_MINUS_CITIES = ['Jiangsu', 'Zhejiang', 'Anhui', 'Fujian', 'Jiangxi', 'Shandong']
 LASTYEAR = 2022
-FIRSTYEAR = 2004
+FIRSTYEAR = 2000

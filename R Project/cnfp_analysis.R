@@ -1,0 +1,6 @@
+install.packages('haven')
+library('haven')
+data <- read_dta('ecfps2018person_202012.dta')
+class(data)
+dim(data)
+head(data)
