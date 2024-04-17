@@ -129,7 +129,7 @@ def extract(path,select=const.PROVINCES):
     return data,metadata
 
 def save(data,metadata, path):
-    data = data.astype(str)
+    # data = data.astype(str)
     np.savetxt("Indicators/" + path+".csv",data,delimiter=",",fmt='%s')
     metadata_lines = []
     for key in metadata:
