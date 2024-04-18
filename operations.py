@@ -5,6 +5,7 @@ import csv
 import consts as const
 import yearbookops as ybk
 import ast
+from random import randint
 
 def singleplot(variable, provinces = const.PROVINCES, title = None,xlabel = "Year", ylabel = None, legend_on = True):
     plt.figure(figsize=(12,8))
@@ -42,6 +43,62 @@ def saveplot(name,variable, provinces = const.PROVINCES, title = None, xlabel = 
     if legend_on:
         plt.legend()
     plt.savefig("Plots/"+name+".pdf",bbox_inches="tight")
+
+def scatterplot(xvar, yvar, year_range=[i for i in range(const.FIRSTYEAR,const.LASTYEAR+1)], provinces = const.PROVINCES, title = None, xlabel = None, ylabel = None):
+    plt.figure(figsize=(12,8))
+    xdata,xmetadata = extract(xvar, provinces)
+    ydata, ymetadata = extract(yvar, provinces)
+    if title == None:
+        plt.title(ymetadata["indicator"][0]+" against \n"+xmetadata["indicator"][0])
+    else:
+        plt.title(title)
+    if xlabel == None:
+        plt.xlabel(xmetadata["indicator"][0])
+    else:
+        plt.xlabel(xlabel)
+    if ylabel == None:
+        plt.ylabel(ymetadata["indicator"][0])
+    else:
+        plt.ylabel(ylabel)
+    for prov in provinces:
+        color='#%06X' % randint(0, 0xFFFFFF)
+        for year in year_range:
+            x = xdata[xmetadata["regions"][prov]][xmetadata["dates"].index(year)]
+            y = ydata[ymetadata["regions"][prov]][ymetadata["dates"].index(year)]
+            if x==np.nan or y == np.nan:
+                continue
+            plt.scatter(x,y,color=color)
+    plt.show()
+
+
+def savescatter(name, xvar, yvar, year_range=[i for i in range(const.FIRSTYEAR,const.LASTYEAR+1)], provinces = const.PROVINCES, title = None, xlabel = None, ylabel = None):
+    plt.figure(figsize=(12,8))
+    xdata,xmetadata = extract(xvar, provinces)
+    ydata, ymetadata = extract(yvar, provinces)
+    if title == None:
+        plt.title(ymetadata["indicator"][0]+" against \n"+xmetadata["indicator"][0])
+    else:
+        plt.title(title)
+    if xlabel == None:
+        plt.xlabel(xmetadata["indicator"][0])
+    else:
+        plt.xlabel(xlabel)
+    if ylabel == None:
+        plt.ylabel(ymetadata["indicator"][0])
+    else:
+        plt.ylabel(ylabel)
+    for prov in provinces:
+        color='#%06X' % randint(0, 0xFFFFFF)
+        for year in year_range:
+            x = xdata[xmetadata["regions"][prov]][xmetadata["dates"].index(year)]
+            y = ydata[ymetadata["regions"][prov]][ymetadata["dates"].index(year)]
+            if x==np.nan or y == np.nan:
+                continue
+            plt.scatter(x,y,color=color)
+    plt.savefig("Plots/"+name+".pdf",bbox_inches="tight")
+    
+   
+    
 
 
 def extract(path,select=const.PROVINCES):
