@@ -3,9 +3,9 @@
     "path": "~/GitHub/Gaokao-Data-Analysis/R Project/cnfp_analysis.R",
     "project_path": "cnfp_analysis.R",
     "type": "r_source",
-    "hash": "0",
+    "hash": "377436245",
     "contents": "",
-    "dirty": true,
+    "dirty": false,
     "created": 1713324326642.0,
     "source_on_save": false,
     "relative_order": 1,
@@ -17,11 +17,11 @@
         "scrollLine": "0"
     },
     "folds": "",
-    "lastKnownWriteTime": 1713324436,
+    "lastKnownWriteTime": 1713404116,
     "encoding": "UTF-8",
     "collab_server": "",
     "source_window": "",
-    "last_content_update": 1713326176241,
+    "last_content_update": 1713404116617,
     "read_only": false,
     "read_only_alternatives": []
 }
