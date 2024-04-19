@@ -3,7 +3,7 @@
     "path": "~/GitHub/Gaokao-Data-Analysis/R Project/regression.R",
     "project_path": "regression.R",
     "type": "r_source",
-    "hash": "1806742938",
+    "hash": "4108815484",
     "contents": "",
     "dirty": false,
     "created": 1713404131103.0,
@@ -16,11 +16,11 @@
         "scrollLine": "0"
     },
     "folds": "",
-    "lastKnownWriteTime": 1713404409,
+    "lastKnownWriteTime": 1713548079,
     "encoding": "UTF-8",
     "collab_server": "",
     "source_window": "",
-    "last_content_update": 1713404409325,
+    "last_content_update": 1713548079221,
     "read_only": false,
     "read_only_alternatives": []
 }

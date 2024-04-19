@@ -1,6 +1,6 @@
 regression_1 <- read.csv("Regression CSVs/Number of Undergraduate Schools_Undergraduate Attrition by Cohort Size_all.csv")
-lm_1 <- lm(regression_1)
+lm_1 <- lm(Undergraduate.Attrition.by.Cohort.Size~Number.of.Undergraduate.Schools,data=regression_1)
 summary(lm_1)
 regression_2 <- read.csv("Regression CSVs/Number of Undergraduate Schools_Undergraduate ATtrition by Cohort Size_all-.csv")
-lm_2 <- lm(regression_2)
+lm_2 <- lm(Undergraduate.Attrition.by.Cohort.Size~Number.of.Undergraduate.Schools,data=regression_2)
 summary(lm_2)

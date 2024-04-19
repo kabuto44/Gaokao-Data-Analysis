@@ -42,7 +42,7 @@ def saveplot(name,variable, provinces = const.PROVINCES, title = None, xlabel = 
         plt.plot(metadata["dates"],data[metadata["regions"][prov]],label=prov)
     if legend_on:
         plt.legend()
-    plt.savefig("Plots/"+name+".pdf",bbox_inches="tight")
+    plt.savefig("Plots/"+name+".png",bbox_inches="tight")
 
 def scatterplot(xvar, yvar, year_range=[i for i in range(const.FIRSTYEAR,const.LASTYEAR+1)], provinces = const.PROVINCES, title = None, xlabel = None, ylabel = None,avgx=False, avgy=False):
     plt.figure(figsize=(12,8))
@@ -147,7 +147,7 @@ def savescatter(name, xvar, yvar, year_range=[i for i in range(const.FIRSTYEAR,c
                 if x==np.nan or y == np.nan:
                     continue
                 plt.scatter(x,y,color=color)
-    plt.savefig("Plots/"+name+".pdf",bbox_inches="tight")
+    plt.savefig("Plots/"+name+".png",bbox_inches="tight")
     
    
     
