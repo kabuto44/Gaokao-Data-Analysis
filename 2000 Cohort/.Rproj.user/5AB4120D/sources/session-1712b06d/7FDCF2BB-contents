@@ -1,0 +1,3 @@
+chedi <- read.csv("Dataframes/Inflow vs CHEDI.csv")
+lm_chedi <- lm(chedi$Scaled.Inflow~chedi$CHEDI,data= chedi)
+summary(lm_chedi)
