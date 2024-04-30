@@ -1,5 +1,0 @@
-calculated datasets:
-- Net Graduate inflow
-- Percent Urban
-
-official data only counts admits through gaokao, not guaranteed admits
