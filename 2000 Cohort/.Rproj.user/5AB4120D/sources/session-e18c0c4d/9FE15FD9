@@ -1,0 +1,28 @@
+{
+    "id": "9FE15FD9",
+    "path": null,
+    "project_path": null,
+    "type": "object_explorer",
+    "hash": "0",
+    "contents": "",
+    "dirty": false,
+    "created": 1714598710436.0,
+    "source_on_save": false,
+    "relative_order": 6,
+    "properties": {
+        "id": "4b750dd183b24759bcb0aaf4a80f2641",
+        "name": "lm_all",
+        "title": "lm_all",
+        "language": "R",
+        "source_window_id": "",
+        "Source": "Source"
+    },
+    "folds": "",
+    "lastKnownWriteTime": 3688501078358438705,
+    "encoding": "",
+    "collab_server": "",
+    "source_window": "",
+    "last_content_update": 1714598710436,
+    "read_only": false,
+    "read_only_alternatives": []
+}

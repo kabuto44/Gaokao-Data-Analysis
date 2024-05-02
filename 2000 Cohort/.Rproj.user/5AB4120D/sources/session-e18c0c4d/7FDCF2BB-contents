@@ -1,5 +1,7 @@
 library(ggplot2)
 library(car)
+library(pls)
+
 outliers = c("Beijing","Tianjin","Shanghai")
 
 all <- read.csv("Dataframes/All Data.csv")
@@ -34,6 +36,10 @@ exclude <- c("Scaled.Inflow","CHEI","Relative.GRP","Inflow","Senior.Graduates","
 vars <- colnames(all)
 vars <- vars[!(vars %in% exclude)]
 run(vars)
+
+set.seed(1)
+pcr_model <- pcr(Scaled.Inflow~.,data=allo,scale=TRUE,validation="CV")
+summary(pcr_model)
 
 run("GRP.per.Capita",outliers=FALSE)
 run("CHEQI",outliers=FALSE)
