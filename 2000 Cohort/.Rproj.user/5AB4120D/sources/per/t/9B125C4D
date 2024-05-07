@@ -3,7 +3,7 @@
     "path": "~/GitHub/Gaokao-Data-Analysis/2000 Cohort/results.R",
     "project_path": "results.R",
     "type": "r_source",
-    "hash": "1903392210",
+    "hash": "711761852",
     "contents": "",
     "dirty": false,
     "created": 1715015064385.0,
@@ -13,15 +13,15 @@
         "tempName": "Untitled1",
         "source_window_id": "",
         "Source": "Source",
-        "cursorPosition": "134,0",
-        "scrollLine": "112"
+        "cursorPosition": "33,23",
+        "scrollLine": "29"
     },
     "folds": "",
-    "lastKnownWriteTime": 1715063146,
+    "lastKnownWriteTime": 1715104858,
     "encoding": "UTF-8",
     "collab_server": "",
     "source_window": "",
-    "last_content_update": 1715063146358,
+    "last_content_update": 1715104858717,
     "read_only": false,
     "read_only_alternatives": []
 }

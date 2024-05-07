@@ -3,7 +3,7 @@ library(ggplot2)
 library(car)
 library(pls)
 
-# set up dataframes
+# load data
 all <- read.csv("Dataframes/All Data.csv",check.names=FALSE)
 outliers <- c("Beijing","Tianjin","Shanghai")
 allo <- all[!(all$Region %in% outliers),]
@@ -69,33 +69,6 @@ colnames(likelihoods) <- c("Model 2","Model 3")
 rownames(likelihoods) <- c("Model 1","Model 2")
 likelihoods
 
-
-#check for individual correlations for each model variable, with out liers
-corr <- function(var, data,graph=FALSE){
-  lm_var <- lm(as.formula(paste("`g Inflow` ~ `",var,"`",sep="")), data = data)
-  if(graph){
-    plot(predict(lm_var),resid(lm_var),main=var)
-  }
-  return(summary(lm_var)$r.squared)
-}
-
-corrw = c()
-vars = c("Urban Ratio", "Population", "CHEDI", "CHEQI",
-               "GRP per Capita" , "Unemployment", "Wages",
-               "Foreign Enterprises")
-for (v in vars){
-  corrw <- c(corrw,corr(v,all))
-}
-
-correlations <- data.frame(Indicator = vars,R2 = corrw)
-correlations[order(correlations$R2,decreasing=TRUE),]
-
-corro = c()
-for (v in vars){
-  corro <- c(corro,corr(v,allo))
-}
-correlations <- data.frame(Indicator = vars,R2 = corro)
-correlations[order(correlations$R2,decreasing=TRUE),]
 
 #run pairwise tests using p inflow as response
 model_1 = lm(`p Inflow` ~ `Urban Ratio` + `Population`,data=all)
