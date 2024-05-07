@@ -1,7 +1,7 @@
 all <- read.csv("Dataframes/All Data.csv")
-outliers = c("Beijing","Tianjin","Shanghai")
+outliers <- c("Beijing","Tianjin","Shanghai")
 all <- all[!(all$Region %in% outliers),]
-exclude = c("Region","Scaled.Inflow","CHEI","Relative.GRP","Inflow","Senior.Graduates","UG.Enrollment","Undergraduate.Institutions","Population")
+exclude <- c("Region","Scaled.Inflow","CHEI","Relative.GRP","Inflow","Senior.Graduates","UG.Enrollment","Undergraduate.Institutions","Population")
 vars <- colnames(all)
 vars <- vars[!(vars %in% exclude)]
 formula <- as.formula(paste("Scaled.Inflow ~ ",paste(vars,collapse="+")))
