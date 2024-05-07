@@ -127,3 +127,8 @@ likelihoods <- data.frame(l_2,l_3)
 colnames(likelihoods) <- c("Model 2","Model 3")
 rownames(likelihoods) <- c("Model 1","Model 2")
 likelihoods
+
+#run vif analysis of multicollinearity
+vif(model_1)
+vif(model_2)
+vif(model_3)
